@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="about-hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 text-center" data-aos="fade-up">
+                <h1 class="about-hero-title">About AI Tools Explorer</h1>
+                <p class="about-hero-subtitle">
+                    Discover the most comprehensive collection of free AI tools available anywhere
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="about-content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2" data-aos="fade-up">
+                <div class="about-card glass-effect">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p>
+                        AI Tools Explorer is dedicated to democratizing access to artificial intelligence by providing a 
+                        curated collection of powerful free tools that can enhance productivity, creativity, and problem-solving 
+                        capabilities without any cost barriers.
+                    </p>
+                    <p>
+                        With the rapid growth of AI technology, many incredible tools are being developed daily. However, 
+                        finding quality free options can be challenging. Our platform aims to solve this problem by presenting 
+                        the best free AI tools in an organized, easy-to-navigate interface.
+                    </p>
+                    
+                    <h2 class="section-title mt-5">What We Offer</h2>
+                    <div class="row features-grid">
+                        <div class="col-md-6 feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="feature-icon">
+                                <i class="bi bi-search"></i>
+                            </div>
+                            <h3>Curated Selection</h3>
+                            <p>We carefully evaluate and select only the most useful, reliable, and genuinely free AI tools.</p>
+                        </div>
+                        <div class="col-md-6 feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <i class="bi bi-grid-3x3-gap"></i>
+                            </div>
+                            <h3>Organized Categories</h3>
+                            <p>Tools are arranged in intuitive categories making it easy to find exactly what you need.</p>
+                        </div>
+                        <div class="col-md-6 feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="bi bi-info-circle"></i>
+                            </div>
+                            <h3>Detailed Information</h3>
+                            <p>Each tool listing includes capabilities, limitations, and direct links to start using right away.</p>
+                        </div>
+                        <div class="col-md-6 feature-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+                            <h3>Regular Updates</h3>
+                            <p>We constantly monitor the AI landscape to add new tools and remove ones that are no longer available.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title mt-5">Our Story</h2>
+                    <p>
+                        AI Tools Explorer was created by Vigyat Singh, a technology enthusiast who recognized the 
+                        transformative potential of AI but also the barriers many face in accessing these tools. The platform 
+                        was born out of a desire to create a single resource where anyone could discover powerful AI tools that 
+                        don't require payment or complex technical knowledge to get started.
+                    </p>
+                    <p>
+                        What began as a personal collection of useful AI resources has grown into a comprehensive catalog 
+                        featuring hundreds of free tools across multiple categories. Our goal is to continue expanding this 
+                        collection while maintaining our focus on quality, usability, and accessibility.
+                    </p>
+                    
+                    <div class="about-stats-section" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">AI Tools</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Weekly</div>
+                            <div class="stat-label">Updates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="mb-4">
+                    Have a suggestion for a tool we should add? Found an issue with our site? 
+                    We'd love to hear from you!
+                </p>
+                <a href="mailto:contact@aitoolsexplorer.com" class="btn btn-primary btn-lg">
+                    <i class="bi bi-envelope"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate stats counter
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(statNumber => {
+            observer.observe(statNumber);
+        });
+        
+        function animateValue(element) {
+            const text = element.textContent;
+            if (text.includes('+') || isNaN(parseInt(text))) {
+                // Skip animation for non-numeric or special values
+                return;
+            }
+            
+            const finalValue = parseInt(text);
+            let startValue = 0;
+            let duration = 2000;
+            let step = Math.ceil(finalValue / 50);
+            let current = 0;
+            let timer = setInterval(() => {
+                current += step;
+                if (current > finalValue) {
+                    element.textContent = finalValue;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = current;
+                }
+            }, duration / 50);
+        }
+    });
+</script>
+{% endblock %}

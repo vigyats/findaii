@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindAI | Discover Free AI Tools</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts - Improved Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- Glowing background effect elements -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+    <div class="bg-glow-3"></div>
+    
+    <div class="wrapper">
+        <!-- Navigation bar -->
+        <header class="main-header">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <div class="logo-container">
+                            <svg class="findai-logo" width="40" height="40" viewBox="0 0 40 40">
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#0070D1" />
+                                        <stop offset="100%" stop-color="#E50914" />
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#logoGradient)" d="M20 2C10.059 2 2 10.059 2 20s8.059 18 18 18 18-8.059 18-18S29.941 2 20 2zm0 33c-8.284 0-15-6.716-15-15 0-8.284 6.716-15 15-15 8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15z"/>
+                                <path fill="url(#logoGradient)" d="M20 10c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+                                <path fill="#FFF" d="M20 14c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+                                <path fill="#FFF" d="M26 8l-2 4h4l-2-4zm-12 0l-2 4h4l-2-4zm-6 14l4 2v-4l-4 2zm24 0l-4 2v-4l4 2zm-12 10l2-4h-4l2 4z"/>
+                            </svg>
+                            <span class="logo-text">FindAI</span>
+                        </div>
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/" style="color: white;">
+                                    <i class="bi bi-house"></i> Home
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" 
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-grid-3x3-gap"></i> Categories
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark glass-effect" aria-labelledby="categoriesDropdown">
+                                    {% for category in categories %}
+                                    <li>
+                                        <a class="dropdown-item" href="/filter/{{ category.lower().replace(' ', '-') }}">
+                                            {{ category }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link indian-nav-link" href="/#indian-ai-tools">
+                                    <i class="bi bi-geo-alt-fill"></i> Indian AI
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">
+                                    <i class="bi bi-info-circle"></i> About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/developer">
+                                    <i class="bi bi-person"></i> Developer
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <form class="d-flex" action="/search" method="get">
+                            <div class="search-container">
+                                <input class="form-control me-2 glass-effect" type="search" name="query" 
+                                       placeholder="Search AI tools" aria-label="Search">
+                                <button class="btn search-btn" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <main class="main-content">
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show glass-effect" role="alert">
+                {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            
+            {% block content %}{% endblock %}
+        </main>
+        
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2025 FindAI. All rights reserved.</p>
+                        <p class="copyright-attribution">Created by Vigyat Singh</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <div class="footer-links">
+                            <a href="https://www.linkedin.com/in/vigyat-singh/" target="_blank" class="footer-link"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/vigyats" target="_blank" class="footer-link"><i class="bi bi-github"></i> GitHub</a>
+                            <a href="/developer" class="footer-link"><i class="bi bi-person-circle"></i> About Developer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

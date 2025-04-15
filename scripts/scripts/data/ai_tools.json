@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Krutrim AI",
+    "url": "https://krutrim.ai/",
+    "description": "India's first AI model and assistant, developed by Ola, supporting multiple Indian languages.",
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "country": "India"
+  },
+  {
+    "name": "Bhashini",
+    "url": "https://bhashini.gov.in/",
+    "description": "A government-backed AI translation platform supporting 22 official Indian languages.",
+    "category": "Translation",
+    "pricing": "Free",
+    "country": "India"
+  },
+  {
+    "name": "Sarvam AI",
+    "url": "https://www.sarvam.ai/",
+    "description": "A voice-first AI that works in multiple Indian languages to solve India-specific problems.",
+    "category": "Voice AI",
+    "pricing": "Freemium",
+    "country": "India"
+  },
+  {
+    "name": "Rephrase.ai",
+    "url": "https://www.rephrase.ai/",
+    "description": "AI-powered video creation platform with digital avatars for marketing and sales content.",
+    "category": "Video Generation",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Vernacular.ai",
+    "url": "https://vernacular.ai/",
+    "description": "Voice AI solutions for customer service in multiple Indian languages.",
+    "category": "Voice AI",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Artivatic.ai",
+    "url": "https://artivatic.ai/",
+    "description": "AI solutions for insurance and healthcare industries with focus on the Indian market.",
+    "category": "Healthcare",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Haptik",
+    "url": "https://www.haptik.ai/",
+    "description": "Conversational AI platform that helps businesses engage customers through chat and voice.",
+    "category": "Chatbot",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "SigTuple",
+    "url": "https://sigtuple.com/",
+    "description": "AI solutions for medical diagnosis through image analysis of blood samples, etc.",
+    "category": "Healthcare",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Niramai",
+    "url": "https://www.niramai.com/",
+    "description": "AI-based breast cancer screening solution that's non-invasive and privacy-aware.",
+    "category": "Healthcare",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Mad Street Den",
+    "url": "https://www.madstreetden.com/",
+    "description": "AI platform specializing in retail and fashion visual AI solutions with global reach.",
+    "category": "Retail",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Zevi.ai",
+    "url": "https://www.zevi.ai/",
+    "description": "AI-powered search and discovery platform for e-commerce sites with focus on Indian market.",
+    "category": "E-commerce",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Mihup",
+    "url": "https://mihup.com/",
+    "description": "Conversational AI that works with Indian languages and dialects for businesses.",
+    "category": "Voice AI",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Fluid AI",
+    "url": "https://fluid.ai/",
+    "description": "AI banking platform for financial institutions to personalize customer experience.",
+    "category": "Finance",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "E42",
+    "url": "https://e42.ai/",
+    "description": "AI worker platform that helps businesses automate processes across departments.",
+    "category": "Automation",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "CropIn",
+    "url": "https://www.cropin.com/",
+    "description": "AI and data-driven agriculture solutions for farmers, banks, and government.",
+    "category": "Agriculture",
+    "pricing": "Paid",
+    "country": "India"
+  },
+  {
+    "name": "Midjourney",
+    "url": "https://www.midjourney.com/",
+    "description": "AI art generation tool that creates images from text descriptions.",
+    "category": "Image Generation",
+    "pricing": "Paid",
+    "country": "USA"
+  },
+  {
+    "name": "Suno AI",
+    "url": "https://suno.ai/",
+    "description": "AI music generation platform that creates songs from text prompts.",
+    "category": "Music Generation",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Replit",
+    "url": "https://replit.com/",
+    "description": "AI-powered coding platform with Ghostwriter for code generation and completion.",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Perplexity AI",
+    "url": "https://www.perplexity.ai/",
+    "description": "AI-powered search engine that provides comprehensive answers to complex questions.",
+    "category": "Search",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Runway",
+    "url": "https://runwayml.com/",
+    "description": "Creative AI tools for video editing, generation, and creative workflow.",
+    "category": "Video",
+    "pricing": "Paid",
+    "country": "USA"
+  },
+  {
+    "name": "Elevenlabs",
+    "url": "https://elevenlabs.io/",
+    "description": "AI voice synthesis platform for realistic text-to-speech and voice cloning.",
+    "category": "Voice",
+    "pricing": "Freemium",
+    "country": "UK"
+  },
+  {
+    "name": "DALL-E",
+    "url": "https://openai.com/dall-e-3",
+    "description": "OpenAI's AI system that creates realistic images and art from text descriptions.",
+    "category": "Image Generation",
+    "pricing": "Paid",
+    "country": "USA"
+  },
+  {
+    "name": "ChatGPT",
+    "url": "https://chat.openai.com/",
+    "description": "OpenAI's conversational AI model that can engage in natural dialogs and answer questions.",
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Copy.ai",
+    "url": "https://www.copy.ai/",
+    "description": "AI copywriting tool that helps create marketing content, emails, and social media posts.",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Jasper",
+    "url": "https://www.jasper.ai/",
+    "description": "AI content platform for marketing teams to create blogs, social posts, and emails.",
+    "category": "Writing",
+    "pricing": "Paid",
+    "country": "USA"
+  },
+  {
+    "name": "Notion AI",
+    "url": "https://www.notion.so/product/ai",
+    "description": "AI writing assistant integrated into Notion for summarizing, brainstorming, and editing.",
+    "category": "Writing",
+    "pricing": "Paid",
+    "country": "USA"
+  },
+  {
+    "name": "Anthropic Claude",
+    "url": "https://www.anthropic.com/claude",
+    "description": "Conversational AI assistant designed to be helpful, harmless, and honest.",
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Synthesia",
+    "url": "https://www.synthesia.io/",
+    "description": "AI video generation platform that creates videos with virtual avatars from text.",
+    "category": "Video",
+    "pricing": "Paid",
+    "country": "UK"
+  },
+  {
+    "name": "Lumen5",
+    "url": "https://lumen5.com/",
+    "description": "AI video creation platform that transforms text content into engaging videos.",
+    "category": "Video",
+    "pricing": "Freemium",
+    "country": "Canada"
+  },
+  {
+    "name": "DeepL",
+    "url": "https://www.deepl.com/",
+    "description": "AI translation service known for high-quality, natural-sounding translations.",
+    "category": "Translation",
+    "pricing": "Freemium",
+    "country": "Germany"
+  },
+  {
+    "name": "Descript",
+    "url": "https://www.descript.com/",
+    "description": "AI-powered audio and video editing platform with transcription and voice cloning.",
+    "category": "Audio/Video",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Stable Diffusion",
+    "url": "https://stability.ai/",
+    "description": "Open-source AI image generation model that creates images from text descriptions.",
+    "category": "Image Generation",
+    "pricing": "Free",
+    "country": "UK"
+  },
+  {
+    "name": "GitHub Copilot",
+    "url": "https://github.com/features/copilot",
+    "description": "AI coding assistant that suggests code completions based on context.",
+    "category": "Coding",
+    "pricing": "Paid",
+    "country": "USA"
+  },
+  {
+    "name": "Grammarly",
+    "url": "https://www.grammarly.com/",
+    "description": "AI writing assistant that checks grammar, spelling, and suggests style improvements.",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "country": "USA"
+  },
+  {
+    "name": "Canva AI",
+    "url": "https://www.canva.com/ai-image-generator/",
+    "description": "AI tools in Canva for design, image generation, and content creation.",
+    "category": "Design",
+    "pricing": "Freemium",
+    "country": "Australia"
+  }
+]

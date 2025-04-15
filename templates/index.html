@@ -1,0 +1,514 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="hero-section">
+    {% if search_results is defined and search_results %}
+<section class="search-results-section">
+    <div class="container-fluid">
+        <h2 class="section-title" data-aos="fade-right">
+            <i class="bi bi-search"></i> Search Results for "{{ query }}"
+            <span class="result-count">({{ search_results|length }} results)</span>
+        </h2>
+        
+        <div class="horizontal-scroll-container">
+            <div class="row flex-nowrap tools-row">
+                {% for tool in search_results %}
+                <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 mb-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                    <div class="tool-card glass-effect" data-tool-id="{{ tool.id }}">
+                        <div class="tool-card-inner">
+                            <div class="tool-icon">
+                                <i class="bi bi-{{ tool.logo }}"></i>
+                            </div>
+                            <div class="tool-badge">{{ tool.category }}</div>
+                            <h3 class="tool-name">{{ tool.name }}</h3>
+                            <p class="tool-description">{{ tool.description }}</p>
+                            <div class="tool-actions">
+                                <a href="{{ tool.url }}" target="_blank" class="btn btn-primary">
+                                    <i class="bi bi-box-arrow-up-right"></i> Visit
+                                </a>
+                                <a href="/tool/{{ tool.id }}" class="btn btn-secondary">
+                                    <i class="bi bi-info-circle"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hide all other sections when search results are shown -->
+{% else %}
+
+<!-- Filtered Category Section -->
+{% if filtered_category is defined and filtered_tools %}
+<section class="filtered-category-section">
+    <div class="container-fluid">
+        <h2 class="section-title" data-aos="fade-right">
+            <i class="bi bi-filter"></i> {{ filtered_category }} Tools
+            <span class="result-count">({{ filtered_tools|length }} tools)</span>
+        </h2>
+        
+        <div class="horizontal-scroll-container">
+            <div class="row flex-nowrap tools-row">
+                {% for tool in filtered_tools %}
+                <div class="col-10 col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                    <div class="tool-card glass-effect" data-tool-id="{{ tool.id }}">
+                        <div class="tool-card-inner">
+                            <div class="tool-icon">
+                                <i class="bi bi-{{ tool.logo }}"></i>
+                            </div>
+                            <div class="tool-badge">{{ tool.category }}</div>
+                            <h3 class="tool-name">{{ tool.name }}</h3>
+                            <p class="tool-description">{{ tool.description }}</p>
+                            <div class="tool-actions">
+                                <a href="{{ tool.url }}" target="_blank" class="btn btn-primary">
+                                    <i class="bi bi-box-arrow-up-right"></i> Visit
+                                </a>
+                                <a href="/tool/{{ tool.id }}" class="btn btn-secondary">
+                                    <i class="bi bi-info-circle"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+    <div class="hero-content">
+        <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+            <i class="bi bi-stars"></i> EXPLORE FREE AI TOOLS
+        </div>
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+            <span class="gradient-text">Discover</span> the Best Free AI Tools
+        </h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+            Explore our massive collection of powerful AI tools that won't cost you a cent
+        </p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+            <a href="#category-text-generation" class="btn btn-primary btn-lg">
+                <i class="bi bi-collection-play"></i> Explore Tools
+            </a>
+            <a href="#about" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-info-circle"></i> Learn More
+            </a>
+        </div>
+    </div>
+    <div class="hero-background">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+    </div>
+</div>
+
+<!-- Featured Tools Banner -->
+<div class="featured-tools-banner">
+    <div class="marquee">
+        <div class="marquee-content">
+            <span><i class="bi bi-stars"></i> Replit Ghostwriter</span>
+            <span><i class="bi bi-stars"></i> ChatGPT</span>
+            <span><i class="bi bi-stars"></i> Midjourney</span>
+            <span><i class="bi bi-stars"></i> Suno AI</span>
+            <span><i class="bi bi-stars"></i> Claude AI</span>
+            <span><i class="bi bi-stars"></i> Stable Diffusion</span>
+            <span><i class="bi bi-stars"></i> DALL-E</span>
+            <span><i class="bi bi-stars"></i> RunwayML</span>
+            <span><i class="bi bi-stars"></i> HuggingFace</span>
+            <span><i class="bi bi-stars"></i> Leonardo AI</span>
+            <span><i class="bi bi-stars"></i> Krutrim AI</span>
+            <span><i class="bi bi-stars"></i> Bhashini</span>
+            <span><i class="bi bi-stars"></i> Sarvam AI</span>
+        </div>
+        <div class="marquee-content">
+            
+            <span><i class="bi bi-stars"></i> ChatGPT</span>
+            <span><i class="bi bi-stars"></i> Midjourney</span>
+            <span><i class="bi bi-stars"></i> Suno AI</span>
+            <span><i class="bi bi-stars"></i> Claude AI</span>
+            <span><i class="bi bi-stars"></i> Stable Diffusion</span>
+            <span><i class="bi bi-stars"></i> DALL-E</span>
+            <span><i class="bi bi-stars"></i> RunwayML</span>
+            <span><i class="bi bi-stars"></i> HuggingFace</span>
+            <span><i class="bi bi-stars"></i> Leonardo AI</span>
+            <span><i class="bi bi-stars"></i> Krutrim AI</span>
+            <span><i class="bi bi-stars"></i> Bhashini</span>
+            <span><i class="bi bi-stars"></i> Sarvam AI</span>
+        </div>
+    </div>
+</div>
+
+<!-- Indian AI Tools Showcase -->
+<section class="indian-ai-section" id="indian-ai-tools">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <div class="indian-ai-badge" data-aos="fade-down">
+                    <i class="bi bi-geo-alt-fill"></i> MADE IN INDIA
+                </div>
+                <h2 class="indian-ai-title" data-aos="fade-up">
+                    <span class="india-colors">Indian</span> AI Innovations
+                </h2>
+                <p class="indian-ai-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Discover powerful AI tools developed in India, supporting local languages and solving unique challenges
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="horizontal-scroll-container">
+            <div class="row flex-nowrap tools-row" id="indian-tools-row">
+                <!-- Indian AI Tools will be populated here via JavaScript -->
+            </div>
+        </div>
+        
+        <div class="scroll-indicators">
+            <button class="scroll-left glass-effect" aria-label="Scroll left">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="scroll-right glass-effect" aria-label="Scroll right">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Category Navigation -->
+
+
+<!-- Search Results Section -->
+
+<!-- Categories Sections -->
+{% if tools %}
+{% for category in tools %}
+<section class="category-section" id="category-{{ category.category.lower().replace(' ', '-') }}">
+    <div class="category-header" data-aos="fade-right">
+        <div class="container-fluid">
+            <h2 class="section-title">
+                <i class="bi bi-{{ get_category_icon(category.category) }}"></i> {{ category.category }}
+                <span class="tool-count">({{ category.tools|length }} tools)</span>
+            </h2>
+            <p class="category-description">{{ get_category_description(category.category) }}</p>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="horizontal-scroll-container">
+            <div class="row flex-nowrap tools-row">
+                {% for tool in category.tools %}
+                <div class="col-10 col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                    <div class="tool-card glass-effect" data-tool-id="{{ tool.id }}">
+                        <div class="tool-card-inner">
+                            <div class="tool-icon">
+                                <i class="bi bi-{{ tool.logo }}"></i>
+                            </div>
+                            <div class="tool-badge">{{ tool.category }}</div>
+                            <h3 class="tool-name">{{ tool.name }}</h3>
+                            <p class="tool-description">{{ tool.description }}</p>
+                            <div class="tool-actions">
+                                <a href="{{ tool.url }}" target="_blank" class="btn btn-primary">
+                                    <i class="bi bi-box-arrow-up-right"></i> Visit
+                                </a>
+                                <a href="/tool/{{ tool.id }}" class="btn btn-secondary">
+                                    <i class="bi bi-info-circle"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="scroll-indicators">
+            <button class="scroll-left glass-effect" aria-label="Scroll left">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="scroll-right glass-effect" aria-label="Scroll right">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+{% endfor %}
+{% endif %}
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center" data-aos="fade-up">
+                <h2 class="about-title">About AI Tools Explorer</h2>
+                <p class="about-text">
+                    AI Tools Explorer is a comprehensive catalog of free artificial intelligence tools that are accessible to everyone. 
+                    Our mission is to democratize access to AI by providing a curated collection of powerful tools that can enhance productivity, 
+                    creativity, and problem-solving capabilities without any cost barriers.
+                </p>
+                <p class="about-text">
+                    Whether you're a developer, designer, content creator, researcher, or just curious about AI, 
+                    our platform helps you discover the right tools for your specific needs.
+                </p>
+                <div class="about-stats" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">AI Tools</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Free</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Helper function to get icons for categories
+    function get_category_icon(category) {
+        const icons = {
+            'Text Generation': 'chat-square-text',
+            'Image Generation': 'image',
+            'Audio Generation': 'soundwave',
+            'Multimodal': 'intersect',
+            'Code Assistance': 'code-square',
+            'Video Creation': 'film',
+            'Data Analysis': 'graph-up',
+            'Conversational AI': 'chat',
+            'Content Writing': 'file-text',
+            'Design Tools': 'palette',
+            'Education Tools': 'book',
+            'Business Tools': 'briefcase'
+        };
+        return icons[category] || 'stars';
+    }
+    
+    // Helper function to get category descriptions
+    function get_category_description(category) {
+        const descriptions = {
+            'Text Generation': 'Create high-quality written content with AI that can write articles, stories, and more.',
+            'Image Generation': 'Transform text prompts into stunning visuals with these AI image generators.',
+            'Audio Generation': 'Create music, sound effects, and voice content using audio AI tools.',
+            'Multimodal': 'Tools that combine multiple AI capabilities like text, image, and audio processing.',
+            'Code Assistance': 'Get help with programming tasks from AI coding assistants and tools.',
+            'Video Creation': 'Transform ideas into videos with AI-powered video generation and editing tools.',
+            'Data Analysis': 'Make sense of complex data with AI-powered analytics and visualization tools.',
+            'Conversational AI': 'Interact with AI chatbots and assistants that can answer questions and provide help.',
+            'Content Writing': 'Generate articles, blog posts, and marketing copy with AI writing tools.',
+            'Design Tools': 'Create stunning designs, logos, and visuals with AI design assistants.',
+            'Education Tools': 'Enhance learning and teaching with educational AI tools and resources.',
+            'Business Tools': 'Boost productivity and streamline workflows with AI business tools.'
+        };
+        return descriptions[category] || 'Discover the latest free AI tools in this category.';
+    }
+    
+    // Load and display Indian AI tools
+    document.addEventListener('DOMContentLoaded', function() {
+        // Indian AI tools data
+        const indianAITools = [
+            {
+                "id": "indian-1",
+                "name": "Krutrim AI",
+                "url": "https://krutrim.ai/",
+                "description": "India's first AI model and assistant, developed by Ola, supporting multiple Indian languages.",
+                "category": "ai_assistants",
+                "logo": "robot"
+            },
+            {
+                "id": "indian-2",
+                "name": "Bhashini",
+                "url": "https://bhashini.gov.in/",
+                "description": "A government-backed AI translation platform supporting 22 official Indian languages.",
+                "category": "language_translation",
+                "logo": "translate"
+            },
+            {
+                "id": "indian-3",
+                "name": "Sarvam AI",
+                "url": "https://www.sarvam.ai/",
+                "description": "A voice-first AI that works in multiple Indian languages to solve India-specific problems.",
+                "category": "music_audio",
+                "logo": "soundwave"
+            },
+            {
+                "id": "indian-4",
+                "name": "Rephrase.ai",
+                "url": "https://www.rephrase.ai/",
+                "description": "AI-powered video creation platform with digital avatars for marketing and sales content.",
+                "category": "video_editing",
+                "logo": "camera-video"
+            },
+            {
+                "id": "indian-5",
+                "name": "Vernacular.ai",
+                "url": "https://vernacular.ai/",
+                "description": "Voice AI solutions for customer service in multiple Indian languages.",
+                "category": "music_audio",
+                "logo": "mic"
+            },
+            {
+                "id": "indian-6",
+                "name": "Artivatic.ai",
+                "url": "https://artivatic.ai/",
+                "description": "AI solutions for insurance and healthcare industries with focus on the Indian market.",
+                "category": "healthcare",
+                "logo": "heart-pulse"
+            },
+            {
+                "id": "indian-7",
+                "name": "Haptik",
+                "url": "https://www.haptik.ai/",
+                "description": "Conversational AI platform that helps businesses engage customers through chat and voice.",
+                "category": "ai_assistants",
+                "logo": "chat-dots"
+            },
+            {
+                "id": "indian-8",
+                "name": "SigTuple",
+                "url": "https://sigtuple.com/",
+                "description": "AI solutions for medical diagnosis through image analysis of blood samples, etc.",
+                "category": "healthcare",
+                "logo": "hospital"
+            },
+            {
+                "id": "indian-9",
+                "name": "Niramai",
+                "url": "https://www.niramai.com/",
+                "description": "AI-based breast cancer screening solution that's non-invasive and privacy-aware.",
+                "category": "healthcare",
+                "logo": "activity"
+            },
+            {
+                "id": "indian-10",
+                "name": "Mad Street Den",
+                "url": "https://www.madstreetden.com/",
+                "description": "AI platform specializing in retail and fashion visual AI solutions with global reach.",
+                "category": "other",
+                "logo": "basket"
+            }
+        ];
+        
+        // Get the container element
+        const indianToolsRow = document.getElementById('indian-tools-row');
+        
+        // Check if the container exists
+        if (indianToolsRow) {
+            // Populate the Indian AI tools
+            indianAITools.forEach((tool, index) => {
+                const toolCard = document.createElement('div');
+                toolCard.className = 'col-10 col-md-6 col-lg-4 col-xl-3';
+                toolCard.setAttribute('data-aos', 'fade-up');
+                toolCard.setAttribute('data-aos-delay', (index * 50).toString());
+                
+                toolCard.innerHTML = `
+                    <div class="tool-card glass-effect" data-tool-id="${tool.id}">
+                        <div class="tool-card-inner">
+                            <div class="tool-icon">
+                                <i class="bi bi-${tool.logo}"></i>
+                            </div>
+                            <div class="tool-badge">${tool.category.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</div>
+                            <h3 class="tool-name">${tool.name}</h3>
+                            <p class="tool-description">${tool.description}</p>
+                            <div class="tool-actions">
+                                <a href="${tool.url}" target="_blank" class="btn btn-primary">
+                                    <i class="bi bi-box-arrow-up-right"></i> Visit
+                                </a>
+                                <a href="/tool/${tool.id}" class="btn btn-secondary">
+                                    <i class="bi bi-info-circle"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                indianToolsRow.appendChild(toolCard);
+            });
+            
+            // Initialize scroll indicators for Indian AI tools section
+            const section = indianToolsRow.closest('.indian-ai-section');
+            if (section) {
+                const scrollContainer = section.querySelector('.horizontal-scroll-container');
+                const leftBtn = section.querySelector('.scroll-left');
+                const rightBtn = section.querySelector('.scroll-right');
+                
+                if (scrollContainer && leftBtn && rightBtn) {
+                    // Only add button listeners on desktop - hide buttons on mobile
+                    const isMobile = window.matchMedia('(max-width: 767.98px)').matches;
+                    
+                    if (isMobile) {
+                        // Hide nav buttons on mobile
+                        leftBtn.style.display = 'none';
+                        rightBtn.style.display = 'none';
+                    } else {
+                        // Scroll left button (desktop only)
+                        leftBtn.addEventListener('click', () => {
+                            scrollContainer.scrollBy({
+                                left: -400,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Add click animation
+                            leftBtn.classList.add('btn-pulse');
+                            setTimeout(() => {
+                                leftBtn.classList.remove('btn-pulse');
+                            }, 300);
+                        });
+                        
+                        // Scroll right button (desktop only)
+                        rightBtn.addEventListener('click', () => {
+                            scrollContainer.scrollBy({
+                                left: 400,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Add click animation
+                            rightBtn.classList.add('btn-pulse');
+                            setTimeout(() => {
+                                rightBtn.classList.remove('btn-pulse');
+                            }, 300);
+                        });
+                    }
+                }
+            }
+            
+            // Initialize card interactions
+            const toolCards = document.querySelectorAll('.indian-ai-section .tool-card');
+            
+            toolCards.forEach(card => {
+                // Card click to navigate to detail page
+                card.addEventListener('click', (event) => {
+                    // Ignore clicks on buttons within the card
+                    if (event.target.closest('.btn')) {
+                        return;
+                    }
+                    
+                    const toolId = card.getAttribute('data-tool-id');
+                    
+                    // Add click animation
+                    card.style.transform = 'scale(0.98)';
+                    card.style.opacity = '0.8';
+                    
+                    setTimeout(() => {
+                        window.location.href = `/tool/${toolId}`;
+                    }, 200);
+                });
+            });
+        }
+    });
+</script>
+{% endblock %}

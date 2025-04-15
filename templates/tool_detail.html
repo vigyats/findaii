@@ -1,0 +1,197 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="tool-detail-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <!-- Back button -->
+                
+                
+                <div class="tool-detail-header" data-aos="fade-up">
+                    <div class="tool-detail-icon">
+                        <i class="bi bi-{{ tool.logo }}"></i>
+                    </div>
+                    <h1 class="tool-detail-name">{{ tool.name }}</h1>
+                    <div class="tool-meta">
+                        <span class="tool-category-badge">{{ tool.category }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/><div class="container tool-detail-container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="tool-detail-card glass-effect" data-aos="fade-up" data-aos-delay="100">                
+                <div class="row tool-detail-content">
+                    <div class="col-lg-4">
+                        <div class="tool-actions">
+                            <a href="{{ tool.url }}" target="_blank" class="btn btn-primary btn-lg w-100 pulse-animation">
+                                <i class="bi bi-box-arrow-up-right"></i> Visit Tool
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?text=Check out {{ tool.name }} on AI Tools Explorer!&url={{ request.url }}" 
+                               target="_blank" class="btn btn-outline-primary btn-lg w-100 mt-3">
+                                <i class="bi bi-share"></i> Share Tool
+                            </a>
+                        </div>
+                        
+                        <div class="tool-quick-info">
+                            <div class="info-item">
+                                <div class="info-label"><i class="bi bi-tag"></i> Category</div>
+                                <div class="info-value">{{ tool.category }}</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label"><i class="bi bi-currency-rupee"></i> Pricing</div>
+                                <div class="info-value">Free</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label"><i class="bi bi-globe"></i> Website</div>
+                                <div class="info-value">
+                                    <a href="{{ tool.url }}" target="_blank">{{ tool.url|truncate(30) }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                        <div class="tool-detail-description" data-aos="fade-up" data-aos-delay="150">
+                            <br/><h3 class="section-heading">Description</h3>
+                            <p>{{ tool.description }}</p>
+                        </div>
+                        
+                        <div class="tool-capabilities" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="section-heading">
+                                <i class="bi bi-stars"></i> Capabilities
+                            </h3>
+                            <ul class="capabilities-list">
+                                {% for capability in tool.capabilities %}
+                                <li>
+                                    <i class="bi bi-check2-circle"></i>
+                                    {{ capability }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                        <div class="tool-limitations" data-aos="fade-up" data-aos-delay="250">
+                            <h3 class="section-heading">
+                                <i class="bi bi-exclamation-triangle"></i> Limitations
+                            </h3>
+                            <p>
+                                {{ tool.limitations }}
+                            </p>
+                        </div>
+                        
+                        <div class="usage-tips" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="section-heading">
+                                <i class="bi bi-lightbulb"></i> Usage Tips
+                            </h3>
+                            <p>
+                                To get the most out of {{ tool.name }}, try experimenting with different inputs and settings.
+                                This free tool can be a great starting point for {{ tool.category.lower() }} tasks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Similar Tools Section -->
+            <div class="similar-tools-section" data-aos="fade-up" data-aos-delay="350">
+                <h3 class="section-title">
+                    <i class="bi bi-grid-3x3-gap"></i> Similar Tools
+                </h3>
+                <div class="similar-tools-grid">
+                    {% for i in range(3) %}
+                    <div class="similar-tool-card glass-effect">
+                        <div class="similar-tool-icon">
+                            <i class="bi bi-{{ get_random_icon() }}"></i>
+                        </div>
+                        <div class="similar-tool-content">
+                            <h4>Similar {{ tool.category }} Tool</h4>
+                            <p>Another great option in this category with different features and capabilities.</p>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="bi bi-info-circle"></i> Learn More
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rating & Feedback Section -->
+<section class="rating-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 text-center" data-aos="fade-up">
+                <h3 class="section-title">Found this tool useful?</h3>
+                <div class="rating-stars">
+                    <i class="bi bi-star rating-star"></i>
+                    <i class="bi bi-star rating-star"></i>
+                    <i class="bi bi-star rating-star"></i>
+                    <i class="bi bi-star rating-star"></i>
+                    <i class="bi bi-star rating-star"></i>
+                </div>
+                <p class="rating-text">Click to rate this tool</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Tool detail page animations
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate tool card
+        setTimeout(() => {
+            document.querySelector('.tool-detail-card').classList.add('animate-in');
+        }, 100);
+        
+        // Initialize rating stars
+        const stars = document.querySelectorAll('.rating-star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                // Reset all stars
+                stars.forEach(s => s.classList.remove('bi-star-fill'));
+                stars.forEach(s => s.classList.add('bi-star'));
+                
+                // Fill stars up to the clicked one
+                for (let i = 0; i <= index; i++) {
+                    stars[i].classList.remove('bi-star');
+                    stars[i].classList.add('bi-star-fill');
+                }
+                
+                // Update rating text
+                document.querySelector('.rating-text').textContent = 'Thanks for your feedback!';
+            });
+            
+            star.addEventListener('mouseenter', () => {
+                // Preview the rating
+                for (let i = 0; i <= index; i++) {
+                    stars[i].classList.add('star-hover');
+                }
+            });
+            
+            star.addEventListener('mouseleave', () => {
+                // Remove preview
+                stars.forEach(s => s.classList.remove('star-hover'));
+            });
+        });
+    });
+    
+    // Helper function to get random icons for similar tools
+    function get_random_icon() {
+        const icons = [
+            'chat-square-text', 'image', 'soundwave', 'intersect', 
+            'code-square', 'film', 'graph-up', 'chat'
+        ];
+        return icons[Math.floor(Math.random() * icons.length)];
+    }
+</script>
+{% endblock %}

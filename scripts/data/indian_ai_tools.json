@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Krutrim AI",
+    "url": "https://krutrim.ai/",
+    "description": "India's first AI model and assistant, developed by Ola, supporting multiple Indian languages.",
+    "category": "ai_assistants",
+    "pricing": "Freemium",
+    "country": "India",
+    "icon": "bi-robot"
+  },
+  {
+    "name": "Bhashini",
+    "url": "https://bhashini.gov.in/",
+    "description": "A government-backed AI translation platform supporting 22 official Indian languages.",
+    "category": "language_translation",
+    "pricing": "Free",
+    "country": "India",
+    "icon": "bi-translate"
+  },
+  {
+    "name": "Sarvam AI",
+    "url": "https://www.sarvam.ai/",
+    "description": "A voice-first AI that works in multiple Indian languages to solve India-specific problems.",
+    "category": "music_audio",
+    "pricing": "Freemium",
+    "country": "India",
+    "icon": "bi-soundwave"
+  },
+  {
+    "name": "Rephrase.ai",
+    "url": "https://www.rephrase.ai/",
+    "description": "AI-powered video creation platform with digital avatars for marketing and sales content.",
+    "category": "video_editing",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-camera-video"
+  },
+  {
+    "name": "Vernacular.ai",
+    "url": "https://vernacular.ai/",
+    "description": "Voice AI solutions for customer service in multiple Indian languages.",
+    "category": "music_audio",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-mic"
+  },
+  {
+    "name": "Artivatic.ai",
+    "url": "https://artivatic.ai/",
+    "description": "AI solutions for insurance and healthcare industries with focus on the Indian market.",
+    "category": "healthcare",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-heart-pulse"
+  },
+  {
+    "name": "Haptik",
+    "url": "https://www.haptik.ai/",
+    "description": "Conversational AI platform that helps businesses engage customers through chat and voice.",
+    "category": "ai_assistants",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-chat-dots"
+  },
+  {
+    "name": "SigTuple",
+    "url": "https://sigtuple.com/",
+    "description": "AI solutions for medical diagnosis through image analysis of blood samples, etc.",
+    "category": "healthcare",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-hospital"
+  },
+  {
+    "name": "Niramai",
+    "url": "https://www.niramai.com/",
+    "description": "AI-based breast cancer screening solution that's non-invasive and privacy-aware.",
+    "category": "healthcare",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-activity"
+  },
+  {
+    "name": "Mad Street Den",
+    "url": "https://www.madstreetden.com/",
+    "description": "AI platform specializing in retail and fashion visual AI solutions with global reach.",
+    "category": "other",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-basket"
+  },
+  {
+    "name": "Zevi.ai",
+    "url": "https://www.zevi.ai/",
+    "description": "AI-powered search and discovery platform for e-commerce sites with focus on Indian market.",
+    "category": "research_tools",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-search"
+  },
+  {
+    "name": "Mihup",
+    "url": "https://mihup.com/",
+    "description": "Conversational AI that works with Indian languages and dialects for businesses.",
+    "category": "ai_assistants",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-chat"
+  },
+  {
+    "name": "Fluid AI",
+    "url": "https://fluid.ai/",
+    "description": "AI banking platform for financial institutions to personalize customer experience.",
+    "category": "business_finance",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-cash-coin"
+  },
+  {
+    "name": "E42",
+    "url": "https://e42.ai/",
+    "description": "AI worker platform that helps businesses automate processes across departments.",
+    "category": "productivity",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-gear"
+  },
+  {
+    "name": "CropIn",
+    "url": "https://www.cropin.com/",
+    "description": "AI and data-driven agriculture solutions for farmers, banks, and government.",
+    "category": "other",
+    "pricing": "Paid",
+    "country": "India",
+    "icon": "bi-tree"
+  }
+]

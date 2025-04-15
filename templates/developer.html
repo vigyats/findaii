@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="developer-hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 text-center" data-aos="fade-up">
+                <h1 class="developer-hero-title">Vigyat Singh</h1>
+                <p class="developer-hero-subtitle">
+                    AI Influencer
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="developer-content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2" data-aos="fade-up">
+                <div class="developer-card glass-effect">
+                    <div class="developer-profile">
+                        <div class="developer-avatar">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div class="developer-info">
+                            <h2>Vigyat Singh</h2>
+                            <p class="developer-location">
+                                <i class="bi bi-geo-alt"></i> Nagpur, Maharashtra, India
+                            </p>
+                            <div class="developer-social">
+                                <a href="https://www.linkedin.com/in/vigyat-singh/" target="_blank" class="social-link">
+                                    <i class="bi bi-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="https://github.com/vigyats" target="_blank" class="social-link">
+                                    <i class="bi bi-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="developer-bio" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="section-heading">About Me</h3>
+                        <p>
+                            As an AI tools tester and technology influencer based in Nagpur, Maharashtra, India, I am passionate about discovering 
+                            and sharing cutting-edge AI technologies with the world. With a background in technology and a keen interest in artificial 
+                            intelligence, I dedicate my time to exploring and evaluating the latest AI tools to help others navigate this rapidly 
+                            evolving landscape.
+                        </p>
+                        <p>
+                            My mission is to democratize access to AI by curating comprehensive collections of free AI tools 
+                            that can enhance creativity, productivity, and problem-solving capabilities without financial barriers.
+                        </p>
+                    </div>
+                    
+                    <div class="developer-message" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="section-heading">My Message</h3>
+                        <blockquote class="message-quote">
+                            "Artificial intelligence should be accessible to everyone, regardless of financial means. 
+                            By identifying and sharing high-quality free AI tools, I aim to empower individuals and small 
+                            businesses to harness the power of AI and unlock new possibilities in their work and creative endeavors."
+                        </blockquote>
+                    </div>
+                    
+                    <div class="developer-expertise" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="section-heading">Expertise</h3>
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <h4>AI Tools Testing</h4>
+                                <p>Thorough evaluation of AI tools for usability, performance, and value</p>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="bi bi-megaphone"></i>
+                                </div>
+                                <h4>Digital Influencing</h4>
+                                <p>Sharing insights and recommendations about the latest AI technologies</p>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="bi bi-bar-chart"></i>
+                                </div>
+                                <h4>Technology Analysis</h4>
+                                <p>In-depth analysis of emerging AI trends and applications</p>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Community Building</h4>
+                                <p>Creating spaces for AI enthusiasts to learn and grow together</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="developer-projects" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="section-heading">Featured Projects</h3>
+                        <div class="project-card">
+                            <h4>AI Tools Explorer</h4>
+                            <p>A comprehensive catalog showcasing 200+ free AI tools across various categories,
+                               designed to help users discover powerful resources without any cost barriers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cta" data-aos="fade-up" data-aos-delay="500">
+                        <h3>Connect With Me</h3>
+                        <p>Feel free to reach out for collaborations, questions, or just to say hello!</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/vigyat-singh/" target="_blank" class="btn btn-primary">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/vigyats" target="_blank" class="btn btn-dark">
+                                <i class="bi bi-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add subtle hover effects to expertise items
+        const expertiseItems = document.querySelectorAll('.expertise-item');
+        expertiseItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+                
+                // Change icon background color
+                const icon = this.querySelector('.expertise-icon');
+                if (icon) {
+                    icon.style.backgroundColor = 'var(--secondary-color)';
+                    icon.style.color = 'white';
+                }
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+                
+                // Reset icon background color
+                const icon = this.querySelector('.expertise-icon');
+                if (icon) {
+                    icon.style.backgroundColor = 'rgba(0, 112, 209, 0.2)';
+                    icon.style.color = 'var(--hover-color)';
+                }
+            });
+        });
+        
+        // Add subtle hover effect to social links
+        const socialLinks = document.querySelectorAll('.social-link, .social-links .btn');
+        socialLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    });
+</script>
+{% endblock %}
